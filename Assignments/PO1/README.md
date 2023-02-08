@@ -9,7 +9,7 @@
 |2| [vector.cpp]| contains vector class function definitions|
 |3|vecto.h|contains class definition and vector prototypes|
 |4|vectorvals.txt|list of numbers to utilize in vector construction|
-|5|ScalesOOP P01 output.txt|output from running main.cpp|
+|5|[ScalesOOP P01 output.txt](https://github.com/jonscales/2143-OOP-Scales/blob/main/Assignments/PO1/ScalesOOP%20P01%20output.txt)|output from running main.cpp|
 
 ###Instructions
 
