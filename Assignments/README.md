@@ -4,6 +4,6 @@
 | :---: | ----------- | ---------------------- |
 |   1   | [A03](https://github.com/jonscales/2143-OOP-Scales/edit/main/Assignments/A03/)         |  making banner & commenting code |                      |
 |   2   | A04         | a glossary of terms for OOP |
-|   3  | [P01](https://github.com/jonscales/2143-OOP-Scales/edit/main/Assignments/P01/)        | Creating Vector Class program |
+|   3  | [P01](https://github.com/jonscales/2143-OOP-Scales/tree/main/Assignments/PO1)        | Creating Vector Class program |
 |      |          |  |
 |      |          |  |
