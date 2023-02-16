@@ -10,3 +10,4 @@
 
 ## Utilization 
 Main demonstrates use of functions in Myvector class.  Requires vectorvals.txt for input. Main writes out to Myvector_output.txt
+Myvector-overloads.cpp contains function definitions. Myvector.h has class function prototypes. 
