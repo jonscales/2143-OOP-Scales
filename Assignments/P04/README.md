@@ -2,7 +2,7 @@
 
 |   #   | Folder Link | Assignment Description |
 | :---: | ----------- | ---------------------- |
-|  1  | [P04 Banner](https://github.com/jonscales/2143-OOP-Scales/edit/main/Assignments/P04/banner.py)      | Program banner document|
+|  1  | [P04 Banner.py](https://github.com/jonscales/2143-OOP-Scales/edit/main/Assignments/P04/banner.py)      | Program banner document|
 |   1   | [main.py](https://github.com/jonscales/2143-OOP-Scales/edit/main/Assignments/P04/main.py)         |  main program |                      |
 |   2   | [dice.py](https://github.com/jonscales/2143-OOP-Scales/edit/main/Assignments/P04/dice.py)         | dice functions |
 
