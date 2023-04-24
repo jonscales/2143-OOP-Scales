@@ -1,4 +1,4 @@
-##  Assignments Folder
+##  Program 02 Folder
 
 |   #   | Folder Link | Assignment Description |
 | :---: | ----------- | ---------------------- |
