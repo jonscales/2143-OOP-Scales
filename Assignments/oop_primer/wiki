@@ -1,0 +1,384 @@
+Abstraction
+Abstraction is the process of hiding the implementation details of a class and exposing only the relevant information to the outside world. This makes it easier to use the class and reduces complexity.
+
+c++
+Copy code
+class Shape {
+    public:
+        virtual double area() = 0;
+};
+Attribute
+An attribute, also known as a data member or instance variable, is a variable that is a part of a class and holds the state of an object.
+
+c++
+Copy code
+class Car {
+    private:
+        string make;
+        string model;
+        int year;
+};
+
+Class
+A class is a blueprint or template for creating objects. It defines the attributes and methods that objects of that class will have.
+
+c++
+Copy code
+class Animal {
+public:
+    std::string name;
+    int age;
+    void speak() {
+        std::cout << "Hello, my name is " << name << " and I am " << age << " years old." << std::endl;
+    }
+};
+Class Variable
+A class variable is a variable that is shared by all instances of a class. It is declared using the static keyword.
+
+c++
+Copy code
+class Animal {
+public:
+    static int count;
+    std::string name;
+    int age;
+    Animal(std::string n, int a) : name(n), age(a) {
+        count++;
+    }
+};
+int Animal::count = 0;
+Composition
+Composition is a way of creating complex objects by combining simpler objects. In C++, this is done by including objects of one class within another class.
+
+c++
+Copy code
+class Engine {
+public:
+    void start() {
+        std::cout << "Engine started." << std::endl;
+    }
+};
+class Car {
+public:
+    Engine engine;
+    void start() {
+        engine.start();
+        std::cout << "Car started." << std::endl;
+    }
+};
+Constructor
+A constructor is a special method that is called when an object is created. It is used to initialize the object's member variables.
+
+c++
+Copy code
+class Animal {
+public:
+    std::string name;
+    int age;
+    Animal(std::string n, int a) : name(n), age(a) {
+        std::cout << "An animal has been created." << std::endl;
+    }
+};
+Encapsulation
+Encapsulation is the practice of hiding the internal details of a class from outside code. It is achieved by making member variables private and providing public methods to access and modify them.
+
+c++
+Copy code
+class BankAccount {
+private:
+    double balance;
+public:
+    void deposit(double amount) {
+        balance += amount;
+    }
+    double getBalance() {
+        return balance;
+    }
+};
+Friend
+A friend is a function or class that is given access to the private members of another class.
+
+c++
+Copy code
+class Animal {
+private:
+    int age;
+    friend void setAge(Animal& animal, int age);
+public:
+    std::string name;
+    Animal(std::string n, int a) : name(n), age(a) {}
+    void speak() {
+        std::cout << "Hello, my name is " << name << " and I am " << age << " years old." << std::endl;
+    }
+};
+void setAge(Animal& animal, int age) {
+    animal.age = age;
+}
+Inheritance
+Inheritance is a way of creating a new class by deriving from an existing class. The new class, called the derived class, inherits the attributes and methods of the existing class, called the base class.
+
+c++
+Copy code
+class Animal {
+public:
+    std::string name;
+    int age;
+    void speak() {
+        std::cout << "Hello, my name is " << name << " and I am " << age << " years old." << std::endl;
+    }
+};
+class Cat : public Animal {
+public:
+    void purr() {
+        std::cout << name << " is purring." << std::endl;
+    }
+};
+Instance Variable
+An instance variable, also known as a member variable, is a variable that is defined in a class and holds the state of an object.
+
+c++
+Copy code
+class Car {
+    private:
+        string make;
+        string model;
+        int year;
+};
+Method
+A method is a function that is associated with a class and operates on its objects. It can access the state of the object and modify it.
+
+c++
+Copy code
+class Car {
+    private:
+        string make;
+        string model;
+        int year;
+    public:
+        void drive() {
+            // Implementation
+        }
+};
+Multiple Inheritance
+Multiple inheritance is a feature of some OOP languages that allows a class to inherit from more than one base class. This can lead to the Diamond problem where ambiguity arises due to multiple implementations of a method from different base classes.
+
+c++
+Copy code
+class Vehicle {
+    public:
+        virtual void move() = 0;
+};
+
+class Car : public Vehicle {
+    // Implementation
+};
+
+class Boat : public Vehicle {
+    // Implementation
+};
+
+class AmphibiousVehicle : public Car, public Boat {
+    // Implementation
+};
+Object
+An object is an instance of a class. It has its own unique state and behavior, and can access the attributes and methods of its class.
+
+c++
+Copy code
+Car myCar;
+myCar.make = "Toyota";
+myCar.model = "Corolla";
+myCar.year = 2021;
+Overloading
+Overloading is the ability to define multiple functions with the same name but different parameters. This allows for more flexibility in the use of the function.
+
+c++
+Copy code
+class Math {
+    public:
+        int add(int a, int b) {
+            return a + b;
+        }
+        double add(double a, double b) {
+            return a + b;
+        }
+};
+Polymorphism
+Polymorphism is the ability of objects of different classes to be treated as if they were objects of the same class. This is achieved through inheritance and virtual functions.
+
+c++
+Copy code
+class Vehicle {
+    public:
+        virtual void move() = 0;
+};
+
+class Car : public Vehicle {
+    public:
+        void move() {
+            // Implementation
+        }
+};
+
+class Boat : public Vehicle {
+    public:
+        void move() {
+            // Implementation
+        }
+};
+
+void makeMove(Vehicle& v) {
+    v.move();
+}
+
+Car myCar;
+Boat myBoat;
+makeMove(myCar);
+makeMove(myBoat);
+
+Public/Private/Protected Security Level
+
+In object-oriented programming, access modifiers such as public, private, and protected are used to control the visibility of class members (i.e., variables and methods) from outside the class. These modifiers determine how accessible a class member is to other parts of the program.
+
+Public: Public members are accessible from anywhere in the program, including from outside the class. They are often used for methods and variables that need to be accessed from other classes.
+Private: Private members are only accessible within the class they are defined in. They cannot be accessed from outside the class, including from derived classes. They are often used for variables and methods that should only be used internally by the class.
+Protected: Protected members are accessible within the class they are defined in and any derived classes. They cannot be accessed from outside the class or its derived classes. They are often used for variables and methods that need to be accessed by derived classes but should not be public.
+Here is an example code snippet in C++ that demonstrates the usage of public, private, and protected access modifiers:
+
+csharp
+Copy code
+class MyClass {
+public:
+    int publicVar;
+
+    void publicMethod() {
+        // Code for public method
+    }
+
+private:
+    int privateVar;
+
+    void privateMethod() {
+        // Code for private method
+    }
+
+protected:
+    int protectedVar;
+
+    void protectedMethod() {
+        // Code for protected method
+    }
+};
+
+int main() {
+    MyClass obj;
+    obj.publicVar = 1;     // Accessing public member
+    obj.publicMethod();    // Calling public method
+
+    // obj.privateVar = 2; // Error: Cannot access private member
+    // obj.privateMethod();// Error: Cannot access private member
+
+    // obj.protectedVar = 3; // Error: Cannot access protected member
+    // obj.protectedMethod();// Error: Cannot access protected member
+
+    return 0;
+}
+Static Variable
+
+A static variable is a variable that is associated with the class rather than with individual objects of the class. It can be accessed without creating an instance of the class, and its value is shared across all objects of the class.
+
+Here is an example code snippet in C++ that demonstrates the usage of a static variable:
+
+c
+Copy code
+class MyClass {
+public:
+    static int count;     // Declaration of static variable
+
+    MyClass() {
+        count++;          // Increment count each time an object is created
+    }
+};
+
+int MyClass::count = 0;   // Definition of static variable
+
+int main() {
+    MyClass obj1;
+    MyClass obj2;
+    MyClass obj3;
+
+    std::cout << "Number of objects created: " << MyClass::count << std::endl; // Accessing static variable
+
+    return 0;
+}
+Virtual
+
+A virtual function is a function that is declared in a base class and can be overridden in derived classes. It allows derived classes to provide their own implementation of the function, which is called instead of the base class implementation when the function is called on an object of the derived class.
+
+Here is an example code snippet in C++ that demonstrates the usage of a virtual function:
+
+c
+Copy code
+class Shape {
+public:
+    virtual void draw() {
+        std::cout << "Drawing a shape" << std::endl;
+    }
+};
+
+class Circle : public Shape {
+public:
+    void draw() override {
+        std::cout << "Drawing a circle" << std::endl;
+    }
+};
+
+int main() {
+    Shape* shape = new Circle();  // Upcasting
+    shape->draw();                // Calling virtual function
+
+    delete shape;
+
+    return 0;
+}
+Overriding
+
+Overriding is a feature of object-oriented programming (OOP) that allows a subclass or child class to provide a specific implementation of a method that is already provided by its parent class or superclass. This means that when the method is called on an object of the subclass, the implementation provided by the subclass will be executed, rather than the implementation provided by the superclass. Overriding is an important concept in inheritance.
+
+Example
+c++
+Copy code
+#include <iostream>
+using namespace std;
+
+// Base class
+class Shape {
+   public:
+      virtual void draw() {
+         cout << "Drawing Shape" << endl;
+      }
+};
+
+// Derived class
+class Circle: public Shape {
+   public:
+      void draw() {
+         cout << "Drawing Circle" << endl;
+      }
+};
+
+int main(void) {
+   Shape *shape;
+   Circle circle;
+
+   // calling draw method of Shape using pointer to Circle object
+   shape = &circle;
+   shape->draw(); // Will call the draw method of Circle class
+
+   return 0;
+}
+In this example, we have a base class called Shape that has a method called draw(). We also have a derived class called Circle that inherits from Shape. Circle provides its own implementation of the draw() method, which overrides the implementation provided by Shape.
+
+In the main() function, we create a pointer to a Shape object called shape, and we also create a Circle object called circle. We then assign the address of circle to shape using the & operator. We then call the draw() method on shape, which is a pointer to a Shape object, but since shape is pointing to a Circle object, the implementation of draw() provided by Circle will be executed, and we will see the output "Drawing Circle" on the console.
+
+This is an example of method overriding in C++.
