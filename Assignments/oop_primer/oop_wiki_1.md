@@ -31,8 +31,6 @@ Tuesday, April 25, 2023
 
 ## Constructor
 
-## def
-
 ## Encapsulation
 
 ## Friends
